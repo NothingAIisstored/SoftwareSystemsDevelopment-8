@@ -44,7 +44,7 @@ async function getItems() {
             acc(
                 rows.map(item =>
                     Object.assign({}, item, {
-                        completed: item.complated === 1,
+                        completed: item.completed === 1,
                     }),
                 ),
             );
@@ -81,17 +81,19 @@ async function storeItem(item) {
 }
 
 async function updateItem(id, item) {
+    const current = await getItem(id);
+
     return new Promise((acc, rej) => {
         db.run(
             'UPDATE todo_items SET name=?, completed=? WHERE id = ?',
-            [item.name, item.completed ? 1 : 0, id],
+            [item.name, current.completed ? 0 : 1, id],
             err => {
                 if (err) return rej(err);
                 acc();
             },
         );
     });
-} 
+}
 
 async function removeItem(id) {
     return new Promise((acc, rej) => {
