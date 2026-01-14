@@ -1,7 +1,16 @@
 function App() {
     const { Container, Row, Col } = ReactBootstrap;
     return (
+
         <Container>
+            {/* ===== 追加ここから ===== */}
+            <Row className="mt-3 mb-3">
+                <Col className="text-center">
+                    <h3>Ryota Ogoshi</h3>
+                    {/* または <h3>ry0ta71410</h3> */}
+                </Col>
+            </Row>
+            
             <Row>
                 <Col md={{ offset: 3, span: 6 }}>
                     <TodoListCard />
