@@ -6,7 +6,7 @@ function App() {
             {/* ===== 追加ここから ===== */}
             <Row className="mt-3 mb-3">
                 <Col className="text-center">
-                    <h3>Ryota Ogoshi</h3>
+                    <h1>ToDo App by Ryota Ogoshi</h1>
                     {/* または <h3>ry0ta71410</h3> */}
                 </Col>
             </Row>
